@@ -1,0 +1,35 @@
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+
+# ── Virtual environments (5.7 GB in BYTE_VA!) ───────────────────────────────
+byte_env/
+/byte_env
+.venv/
+venv/
+
+# ── Runtime telemetry (rewritten on every run; see docs/KNOWN_ISSUES.md H3) ─
+# NOTE: files already tracked stay tracked until you run:
+#   git rm --cached robot/logs/*.csv multiprocess_code/all_4_legs/cur_test/motor_*.csv
+robot/logs/*.csv
+multiprocess_code/all_4_legs/cur_test/motor_currents.csv
+multiprocess_code/all_4_legs/cur_test/motor_temps.csv
+
+# ── ROS / colcon build output that landed in BYTE_VA (KNOWN_ISSUES H2) ──────
+multiprocess_code/all_4_legs/cur_test/BYTE_VA/build/
+multiprocess_code/all_4_legs/cur_test/BYTE_VA/install/
+multiprocess_code/all_4_legs/cur_test/BYTE_VA/log/
+
+# ── Large model weights: download instead of committing (KNOWN_ISSUES H1) ──
+# BYTE_VA/download_models.py fetches the voice models; YOLO weights are
+# downloaded automatically by ultralytics on first use.
+*.pt
+*.onnx
+*.tar.bz2
+
+# ── Local tool settings / editor files ──────────────────────────────────────
+.claude/settings.local.json
+.vscode/
+.idea/
+*.swp
+.DS_Store

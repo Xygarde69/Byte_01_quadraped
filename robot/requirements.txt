@@ -1,0 +1,15 @@
+# Core dependencies for robot/ — versions verified on the robot's Raspberry Pi
+# (Ubuntu 22.04, Python 3.10.12) on 2026-11-07.
+#   python3 -m pip install -r robot/requirements.txt
+#
+# Experiment extras (gamepad, plotting, vision, voice) are intentionally NOT here;
+# see docs/HARDWARE_SETUP.md §5 and multiprocess_code/all_4_legs/cur_test/BYTE_VA/requirements.txt.
+
+python-can==4.6.1      # CAN bus (SocketCAN) — ak60_v3_control.py, can_runtime.py
+numpy==2.2.6           # imported by lib/inverse_kinematics.py (currently unused there)
+fastapi==0.136.1       # state_manager_server_v2.py
+uvicorn==0.46.0        # serves the FastAPI app
+pydantic==2.13.3       # request model validation
+requests==2.25.1       # test_client.py, keyboard_controller.py
+keyboard==0.13.5       # keyboard_controller.py (requires root on Linux)
+smbus2==0.6.0          # MPU-6050 over I2C — mpu_leveling.py (also imported by lib/trot_gait.py)

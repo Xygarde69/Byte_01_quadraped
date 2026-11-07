@@ -1,0 +1,12 @@
+[Unit]
+Description=CAN Interface Setup for Waveshare HAT
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/can-setup.sh
+RemainAfterExit=yes
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
